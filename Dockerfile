@@ -13,5 +13,8 @@ COPY init.sql /docker-entrypoint-initdb.d/
 # Expose the default MySQL port
 EXPOSE 3306
 
+# Persist data between container restarts
+VOLUME /var/lib/mysql
+
 # Start the MySQL service
 CMD ["mysqld"]
